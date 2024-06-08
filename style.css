@@ -1,34 +1,33 @@
 :root {
-    --grid-cols: 1;
-    --grid-rows: 1;
+  --grid-cols: 1;
+  --grid-rows: 1;
 }
 body {
-    margin-top: auto;
-    margin-bottom: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .layout {
-    display: grid;
-    place-items: center;
-    height: 100vh;
+  display: grid;
+  place-items: center;
+  height: 100vh;
 }
 #main {
-    border: 1px solid #000;
-    width: 514px;
-    height: 514px;
+  border: 1px solid #000;
+  width: 520px;
+  height: 520px;
 }
 #container {
-    display: grid;
-    grid-gap: 0px;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
+  display: grid;
+  grid-gap: 0px;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 .grid-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-item:hover {
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19), 0 5px 5px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19), 0 5px 5px rgba(0, 0, 0, 0.23);
 }
