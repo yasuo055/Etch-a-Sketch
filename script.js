@@ -52,5 +52,4 @@ function getGridSize() {
   }
   hoverColor();
 }
-
 getGridSize();
