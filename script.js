@@ -1,14 +1,5 @@
 const container = document.querySelector("#container");
 
-// let randomColor = function() {
-//     let hex = '0123456789ABCDEF';
-//     let color = '#';
-//     for(let i = 0; i < 6 ; i++){
-//         color += hex[Math.floor(Math.random() * 16)];
-//     }
-//     return color;
-// }
-
 let rainbowColor = function () {
   const Colors = [
     "#FF0000", // Red
@@ -24,18 +15,7 @@ let rainbowColor = function () {
   return Colors[generatedColor];
 };
 
-function makeRows(rows, cols) {
-  container.style.setProperty("--grid-rows", rows);
-  container.style.setProperty("--grid-cols", cols);
-  for (let c = 0; c < rows * cols; c++) {
-    let cell = document.createElement("div");
-    cell.classList.add("grid-item");
-    container.appendChild(cell);
-  }
-  hoverColor();
-}
-
-//function that changes div color uponed being hovered
+// Function that changes div color upon being hovered
 function hoverColor() {
   let items = document.querySelectorAll(".grid-item");
   items.forEach((item) => {
@@ -45,4 +25,37 @@ function hoverColor() {
   });
 }
 
-makeRows(16, 16);
+function getGridSize() {
+  let gridSize = parseInt(
+    prompt("Enter the size of the grid (e.g., 16 for 16x16):", "")
+  );
+  if (!gridSize || gridSize <= 0) {
+    alert("Please enter a valid positive number");
+    return;
+  }
+
+  
+  container.innerHTML = ""; // Clear the existing grid
+  container.style.setProperty("--grid-cols", gridSize);
+  container.style.setProperty("--grid-rows", gridSize);
+
+  const cellSize = parseFloat( 514 / gridSize).toFixed(1);
+  console.log(cellSize);
+  
+  for (let c = 0; c < gridSize * gridSize; c++) {
+    let cell = document.createElement("div");
+    cell.classList.add("grid-item");
+    cell.style.width = `${cellSize}px`;
+    cell.style.height = `${cellSize}px`;
+    //cell.style.border = '0px solid #ddd';
+    container.appendChild(cell);
+  }
+  hoverColor();
+}
+
+
+
+
+
+
+getGridSize();
