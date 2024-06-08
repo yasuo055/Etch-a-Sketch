@@ -39,7 +39,7 @@ function getGridSize() {
   container.style.setProperty("--grid-cols", gridSize);
   container.style.setProperty("--grid-rows", gridSize);
 
-  const cellSize = parseFloat( 514 / gridSize).toFixed(1);
+  const cellSize = parseFloat( 520 / gridSize).toFixed(1);
   console.log(cellSize);
   
   for (let c = 0; c < gridSize * gridSize; c++) {
