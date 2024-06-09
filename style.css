@@ -94,7 +94,7 @@ input {
   gap: 8px;
   width: 200px;
   position: absolute;
-  bottom: 5%; /* Position at the bottom of #main */
+  bottom: 10%; /* Position at the bottom of #main */
   left: 50%;
   transform: translate(-50%, 20px); /* Center horizontally and add some vertical space */
 }
@@ -130,10 +130,17 @@ input[type='color']:active {
 @media (max-width: 1400px) {
   .title {
     font-size: 32px;
+    
   }
 
  #main {
     justify-content: center;
+  }
+  #controls {
+    position: absolute;
+    bottom: 5%; /* Position at the bottom of #main */
+    left: 50%;
+    transform: translate(-50%, 20px); /* Center horizontally and add some vertical space */
   }
 }
 
@@ -145,6 +152,12 @@ input[type='color']:active {
   #container {
     width: 520px;
     height: 520px;
+  }
+  #controls {
+    position: absolute;
+    bottom: 5%; /* Position at the bottom of #main */
+    left: 50%;
+    transform: translate(-50%, 20px); /* Center horizontally and add some vertical space */
   }
 }
 
