@@ -34,36 +34,34 @@ function getGridSize() {
     alert("Please enter a valid positive number");
     return;
   }
-  clearGrid();
 
+  container.textContent = ""; // Clear the existing grid
   checkedLimit();
 }
 
-function createGrid() {
-    const cellSize = parseFloat(520 / gridSize).toFixed(1);
-    console.log(cellSize);
-    container.style.setProperty("--grid-cols", gridSize);
-    container.style.setProperty("--grid-rows", gridSize);
-    for (let c = 0; c < gridSize * gridSize; c++) {
-      let cell = document.createElement("div");
-      cell.classList.add("grid-item");
-      cell.style.width = `${cellSize}px`;
-      cell.style.height = `${cellSize}px`;
-      //cell.style.border = '0px solid #ddd';
-      container.appendChild(cell);
-    }
-    hoverColor();
- 
+function setUpGrid() {
+  const cellSize = parseFloat(520 / gridSize).toFixed(1);
+  console.log(cellSize);
+  container.style.setProperty("--grid-cols", gridSize);
+  container.style.setProperty("--grid-rows", gridSize);
+  for (let c = 0; c < gridSize * gridSize; c++) {
+    let cell = document.createElement("div");
+    cell.classList.add("grid-item");
+    cell.style.width = `${cellSize}px`;
+    cell.style.height = `${cellSize}px`;
+    container.appendChild(cell);
+  }
+  hoverColor();
 }
 
 function clearGrid() {
   container.textContent = ""; // Clear the existing grid
-  
+  setUpGrid();
 }
 
-function checkedLimit(){
+function checkedLimit() {
   if (gridSize <= 64) {
-    createGrid();
+    setUpGrid();
   } else {
     alert("The limit is 64x64");
   }
