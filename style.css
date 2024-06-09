@@ -85,6 +85,7 @@ input {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.20), 0 5px 5px rgba(0, 0, 0, 0.80);
 }
 
+
 #controls {
   display: flex;
   flex-direction: row;
@@ -93,10 +94,11 @@ input {
   gap: 8px;
   width: 200px;
   position: absolute;
-  top: 90%;
+  bottom: 5%; /* Position at the bottom of #main */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 20px); /* Center horizontally and add some vertical space */
 }
+
 
 button {
   padding: 10px 20px;
@@ -122,4 +124,44 @@ input[type='color']:hover {
 input[type='color']:active {
   transition: transform 0.05s ease-in-out;
   transform: scale(1);
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1400px) {
+  .title {
+    font-size: 32px;
+  }
+
+ #main {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 850px) {
+  .title {
+    font-size: 32px;
+  }
+
+  #container {
+    width: 520px;
+    height: 520px;
+  }
+}
+
+@media (max-width: 550px) {
+  .title {
+    font-size: 28px;
+  }
+
+  #controls {
+    position: absolute;
+    bottom: 5%; /* Position at the bottom of #main */
+    left: 50%;
+    transform: translate(-50%, 20px); /* Center horizontally and add some vertical space */
+  }
+  
+  #container {
+    width: 520px;
+    height: 520px;
+  }
 }
