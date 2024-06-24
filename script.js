@@ -39,6 +39,10 @@ function getGridSize() {
   checkedLimit();
 }
 
+getGridSize();
+
+
+
 function setUpGrid() {
   const cellSize = parseFloat(520 / gridSize).toFixed(1);
   console.log(cellSize);
